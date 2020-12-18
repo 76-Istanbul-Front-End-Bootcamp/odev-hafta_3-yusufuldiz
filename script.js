@@ -6,12 +6,13 @@ this.name = name;
 
 action(){
   document.getElementById(this.actionSoundName).play();
+  document.getElementById(this.actionImageName).style.visibility = "visible";
 }
 
 putInTheDocument(){
     var petsTable = document.getElementById("petsTable");
     var petTR = document.createElement("tr");
-  
+     
     var petNameTD = document.createElement("td");
     petNameTD.textContent = this.name;
     petTR.appendChild(petNameTD);
@@ -38,6 +39,7 @@ class Cat extends AnimalClass{
         this.legs = 4;
         this.actionText = "Meoow"
         this.actionSoundName = "meow"
+        this.actionImageName = "garfield"
     }
 }
 
@@ -47,6 +49,7 @@ class Monkey extends AnimalClass{
         this.legs = 2;
         this.actionText = "Scream";
         this.actionSoundName = "scream";
+        this.actionImageName = "baboon";
     }
 }
 
@@ -55,8 +58,6 @@ Mila.putInTheDocument();
 
 var Charlie = new Monkey("Charlie");
 Charlie.putInTheDocument();
-
-
 
 
 
